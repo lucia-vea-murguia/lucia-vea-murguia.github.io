@@ -1,1 +1,379 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luuveeme | Chemical Engineering</title>
+
+    <meta name="description" content="Personal portfolio of a Chemical Engineer exploring process engineering, computational methods and data science.">
+
+    <style>
+        :root {
+            --blue: #2457ff;
+            --black: #171717;
+            --grey: #777777;
+            --line: #eaeaea;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--white);
+            color: var(--black);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 0 35px;
+        }
+
+        /* NAVIGATION */
+
+        nav {
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .logo {
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            font-size: 13px;
+            color: var(--grey);
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 125px 0 115px;
+        }
+
+        .eyebrow {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: clamp(43px, 7vw, 76px);
+            line-height: 1.08;
+            letter-spacing: -4px;
+            max-width: 800px;
+            margin-bottom: 28px;
+        }
+
+        h1 span {
+            color: var(--blue);
+        }
+
+        .intro {
+            color: var(--grey);
+            font-size: 17px;
+            max-width: 550px;
+            margin-bottom: 35px;
+        }
+
+        .button {
+            display: inline-block;
+            background: var(--blue);
+            color: white;
+            padding: 12px 23px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            background: #123bd0;
+            transform: translateY(-2px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 75px 0;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-label {
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-size: 30px;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .about-text {
+            color: var(--grey);
+            max-width: 650px;
+            font-size: 15px;
+        }
+
+        /* SKILLS */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .skill {
+            border: 1px solid var(--line);
+            padding: 8px 15px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* PROJECTS */
+
+        .project {
+            border: 1px solid var(--line);
+            padding: 30px;
+            margin-top: 30px;
+            transition: 0.2s;
+        }
+
+        .project:hover {
+            border-color: var(--blue);
+            transform: translateY(-3px);
+        }
+
+        .project-number {
+            color: var(--blue);
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .project h3 {
+            font-size: 21px;
+            margin: 12px 0;
+        }
+
+        .project p {
+            color: var(--grey);
+            font-size: 14px;
+        }
+
+        .project-status {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 11px;
+            color: var(--blue);
+            font-weight: 700;
+        }
+
+        /* CONTACT */
+
+        .contact-text {
+            color: var(--grey);
+            margin-bottom: 25px;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 25px 0;
+            color: var(--grey);
+            font-size: 12px;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 0 22px;
+            }
+
+            nav {
+                height: 70px;
+            }
+
+            .nav-links {
+                gap: 14px;
+                font-size: 11px;
+            }
+
+            .hero {
+                padding: 90px 0;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            footer .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav>
+            <a href="#" class="logo">luuveeme<span>.</span></a>
+
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+
+        <main>
+
+            <div class="hero">
+                <p class="eyebrow">Chemical Engineering · Portfolio</p>
+
+                <h1>
+                    Engineering ideas into
+                    <span>solutions.</span>
+                </h1>
+
+                <p class="intro">
+                    Chemical Engineer interested in process engineering,
+                    computational methods, process simulation and
+                    data-driven problem solving.
+                </p>
+
+                <a href="#projects" class="button">
+                    Explore my work →
+                </a>
+            </div>
+
+            <section id="about">
+                <p class="section-label">01 / ABOUT</p>
+
+                <h2>A little about me.</h2>
+
+                <p class="about-text">
+                    I am a Chemical Engineer with an interest in
+                    engineering, technology and computational tools.
+                    I enjoy exploring how programming, mathematical
+                    modelling and process simulation can be applied
+                    to solve real-world engineering problems.
+
+                    <br><br>
+
+                    This portfolio is a collection of my academic
+                    projects, technical work and experiments.
+                </p>
+
+                <div class="skills">
+                    <span class="skill">Python</span>
+                    <span class="skill">MATLAB</span>
+                    <span class="skill">Aspen Plus</span>
+                    <span class="skill">Excel</span>
+                    <span class="skill">AutoCAD</span>
+                </div>
+            </section>
+
+            <section id="projects">
+                <p class="section-label">02 / SELECTED WORK</p>
+
+                <h2>Projects & research.</h2>
+
+                <div class="project">
+                    <span class="project-number">PROJECT 01</span>
+
+                    <h3>Bachelor's Thesis</h3>
+
+                    <p>
+                        An academic project focused on chemical
+                        engineering and computational methods.
+                        More details, methodology and results
+                        coming soon.
+                    </p>
+
+                    <span class="project-status">
+                        ↗ DOCUMENTATION IN PROGRESS
+                    </span>
+                </div>
+            </section>
+
+            <section id="contact">
+                <p class="section-label">03 / GET IN TOUCH</p>
+
+                <h2>Let's connect.</h2>
+
+                <p class="contact-text">
+                    Interested in engineering, technology or
+                    collaborating on interesting projects?
+                </p>
+
+                <a href="https://github.com/luuveeme"
+                   target="_blank"
+                   class="button">
+                    GitHub profile →
+                </a>
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="container">
+                <span>© 2026 Luuveeme</span>
+                <span>Built with curiosity & engineering.</span>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
+
