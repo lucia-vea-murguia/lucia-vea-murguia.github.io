@@ -2,768 +2,715 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Lucía Vea-Murguía | Chemical Engineer</title>
-
-    <meta name="description" content="Personal portfolio of Lucía Vea-Murguía, Chemical Engineer exploring process engineering, computational methods and scientific computing.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --blue: #315cff;
-            --black: #202020;
-            --grey: #777777;
-            --light: #f7f8fc;
-            --line: #eaeaea;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: var(--white);
-            color: var(--black);
-            font-family: 'DM Sans', sans-serif;
-            line-height: 1.7;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            max-width: 1080px;
-            margin: auto;
-            padding: 0 35px;
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            height: 88px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--line);
-        }
-
-        .logo {
-            font-size: 17px;
-            font-weight: 700;
-            letter-spacing: -0.7px;
-        }
-
-        .logo span {
-            color: var(--blue);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            font-size: 13px;
-            color: var(--grey);
-        }
-
-        .nav-links a:hover {
-            color: var(--blue);
-        }
-
-        /* HERO */
-
-        .hero {
-            padding: 125px 0 115px;
-            display: grid;
-            grid-template-columns: 1fr 230px;
-            align-items: center;
-            gap: 55px;
-        }
-
-        .eyebrow {
-            font-family: 'DM Mono', monospace;
-            color: var(--blue);
-            font-size: 11px;
-            letter-spacing: 1.5px;
-            margin-bottom: 28px;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(55px, 8vw, 88px);
-            line-height: 1.08;
-            font-weight: 500;
-            letter-spacing: -3px;
-            margin-bottom: 28px;
-        }
-
-        h1 span {
-            color: var(--blue);
-        }
-
-        .hero-subtitle {
-            font-size: 19px;
-            max-width: 540px;
-            line-height: 1.65;
-            margin-bottom: 17px;
-        }
-
-        .intro {
-            color: var(--grey);
-            font-size: 14px;
-            max-width: 510px;
-            margin-bottom: 32px;
-        }
-
-        .text-link {
-            color: var(--blue);
-            font-size: 13px;
-            font-weight: 600;
-            border-bottom: 1px solid var(--blue);
-            padding-bottom: 4px;
-        }
-
-        .text-link:hover {
-            opacity: 0.65;
-        }
-
-        /* MOLECULAR GRAPHIC */
-
-        .molecule {
-            width: 220px;
-            height: 220px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .molecule svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .molecule-note {
-            position: absolute;
-            bottom: -8px;
-            right: 0;
-            font-family: 'DM Mono', monospace;
-            font-size: 9px;
-            color: var(--grey);
-        }
-
-        /* SECTIONS */
-
-        section {
-            padding: 75px 0;
-            border-top: 1px solid var(--line);
-        }
-
-        .section-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 35px;
-        }
-
-        .section-label {
-            font-family: 'DM Mono', monospace;
-            color: var(--blue);
-            font-size: 11px;
-            letter-spacing: 1.5px;
-        }
-
-        .section-index {
-            color: #aaaaaa;
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 37px;
-            font-weight: 500;
-            letter-spacing: -1px;
-            margin-bottom: 22px;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 90px;
-        }
-
-        .about-text {
-            color: var(--grey);
-            font-size: 14px;
-            max-width: 600px;
-        }
-
-        .about-side {
-            border-left: 1px solid var(--line);
-            padding-left: 28px;
-        }
-
-        .side-label {
-            font-family: 'DM Mono', monospace;
-            color: var(--blue);
-            font-size: 10px;
-            margin-bottom: 12px;
-        }
-
-        .side-text {
-            font-size: 13px;
-            color: var(--grey);
-            margin-bottom: 23px;
-        }
-
-        /* TOOLS */
-
-        .tools {
-            margin-top: 38px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-        }
-
-        .tool {
-            padding: 7px 13px;
-            border: 1px solid var(--line);
-            border-radius: 3px;
-            font-size: 11px;
-            color: #555555;
-        }
-
-        /* PROJECTS */
-
-        .projects-intro {
-            color: var(--grey);
-            font-size: 14px;
-            margin-top: -10px;
-            margin-bottom: 35px;
-        }
-
-        .project {
-            display: grid;
-            grid-template-columns: 90px 1fr auto;
-            align-items: start;
-            gap: 25px;
-            padding: 27px 0;
-            border-top: 1px solid var(--line);
-            transition: 0.2s;
-        }
-
-        .project:last-child {
-            border-bottom: 1px solid var(--line);
-        }
-
-        .project:hover .project-title {
-            color: var(--blue);
-        }
-
-        .project-number {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            color: var(--blue);
-            padding-top: 5px;
-        }
-
-        .project-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 23px;
-            font-weight: 500;
-            transition: 0.2s;
-        }
-
-        .project-description {
-            color: var(--grey);
-            font-size: 13px;
-            margin-top: 5px;
-            max-width: 550px;
-        }
-
-        .project-tag {
-            font-family: 'DM Mono', monospace;
-            font-size: 9px;
-            color: var(--grey);
-            padding-top: 8px;
-        }
-
-        /* PERSONAL NOTE */
-
-        .note {
-            background: var(--light);
-            padding: 36px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .note h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 500;
-            font-size: 25px;
-            margin-bottom: 8px;
-        }
-
-        .note p {
-            color: var(--grey);
-            font-size: 13px;
-            max-width: 500px;
-        }
-
-        .note-symbol {
-            color: var(--blue);
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
-        }
-
-        /* CONTACT */
-
-        .contact {
-            padding: 85px 0;
-        }
-
-        .contact h2 {
-            font-size: 49px;
-        }
-
-        .contact-text {
-            color: var(--grey);
-            font-size: 14px;
-            margin-bottom: 27px;
-        }
-
-        .contact-links {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .contact-links a {
-            color: var(--blue);
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid var(--line);
-            padding: 25px 0;
-            color: var(--grey);
-            font-size: 11px;
-        }
-
-        footer .container {
-            display: flex;
-            justify-content: space-between;
-            gap: 15px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 700px) {
-
-            .container {
-                padding: 0 22px;
-            }
-
-            nav {
-                height: 72px;
-            }
-
-            .nav-links {
-                gap: 15px;
-                font-size: 11px;
-            }
-
-            .hero {
-                padding: 85px 0 75px;
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-            h1 {
-                font-size: 61px;
-                letter-spacing: -2px;
-            }
-
-            .molecule {
-                width: 140px;
-                height: 140px;
-                margin: auto;
-            }
-
-            section {
-                padding: 55px 0;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-
-            .about-side {
-                padding-left: 20px;
-            }
-
-            .project {
-                grid-template-columns: 48px 1fr;
-                gap: 12px;
-            }
-
-            .project-tag {
-                grid-column: 2;
-                padding-top: 0;
-            }
-
-            .note {
-                padding: 25px;
-            }
-
-            .note-symbol {
-                font-size: 35px;
-            }
-
-            .contact h2 {
-                font-size: 39px;
-            }
-
-            footer .container {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucía Vea-Murguía</title>
+  <meta name="description" content="A little corner of the internet by Lucía Vea-Murguía, Chemical Engineer.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #171717;
+      --grey: #858585;
+      --light-grey: #ededed;
+      --blue: #4777ed;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--black);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 42px;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 38px;
+    }
+
+    nav a {
+      transition: color .2s ease;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 465px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: 50px 0 75px;
+    }
+
+    .hero-text {
+      max-width: 470px;
+    }
+
+    .hero h1 {
+      font-size: 27px;
+      line-height: 1.3;
+      letter-spacing: -1px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .hero-description {
+      font-size: 23px;
+      line-height: 1.35;
+      letter-spacing: -.6px;
+      max-width: 440px;
+      font-weight: 400;
+    }
+
+    .hero-description span {
+      color: var(--blue);
+    }
+
+    .hero-small {
+      margin-top: 22px;
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    /* ABSTRACT SCIENTIFIC DRAWING */
+
+    .hero-art {
+      width: 100%;
+      max-width: 430px;
+      justify-self: center;
+    }
+
+    .hero-art svg {
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+
+    .drawing-line {
+      fill: none;
+      stroke: #242424;
+      stroke-width: 1.15;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .drawing-light {
+      fill: none;
+      stroke: #a7a7a7;
+      stroke-width: 1;
+      opacity: .55;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* WORK */
+
+    .work {
+      padding: 40px 0 100px;
+    }
+
+    .section-heading {
+      color: var(--grey);
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 48px;
+      letter-spacing: .2px;
+    }
+
+    .work-intro {
+      font-size: 14px;
+      color: var(--grey);
+      margin-top: -34px;
+      margin-bottom: 42px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 35px;
+      row-gap: 65px;
+      align-items: start;
+    }
+
+    .project {
+      display: block;
+      min-width: 0;
+    }
+
+    .project-image {
+      width: 100%;
+      aspect-ratio: 1.35 / 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 17px;
+      background: #f2f3f5;
+      transition: transform .3s ease;
+    }
+
+    .project:hover .project-image {
+      transform: translateY(-4px);
+    }
+
+    .project-image svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .project-title {
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    .project-description {
+      font-size: 13px;
+      color: var(--grey);
+      line-height: 1.5;
+    }
+
+    .project-type {
+      margin-top: 10px;
+      font-size: 10px;
+      color: var(--blue);
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    /* THUMBNAIL 1 - THESIS */
+
+    .thesis-art {
+      background: #e8f0f8;
+    }
+
+    /* THUMBNAIL 2 - COMPUTATIONAL */
+
+    .computational-art {
+      background: #e8edf1;
+    }
+
+    /* THUMBNAIL 3 - REACTORS */
+
+    .reactor-art {
+      background: #f3eee8;
+    }
+
+    /* THUMBNAIL 4 - MASTER */
+
+    .master-art {
+      background: #f1eef7;
+    }
+
+    /* THUMBNAIL 5 - PERSONAL */
+
+    .personal-art {
+      background: #edf2ec;
+    }
+
+    /* ABOUT */
+
+    .about {
+      border-top: 1px solid var(--light-grey);
+      padding: 65px 0 75px;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about h2 {
+      font-size: 25px;
+      letter-spacing: -.8px;
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      max-width: 480px;
+      color: #666;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .about-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .detail-label {
+      color: var(--grey);
+      font-size: 11px;
+      margin-bottom: 8px;
+      letter-spacing: .5px;
+    }
+
+    .detail-text {
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--light-grey);
+      padding: 24px 0;
+      font-size: 12px;
+      color: var(--grey);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer a:hover {
+      color: var(--blue);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 760px) {
+      .container {
+        padding: 0 23px;
+      }
+
+      nav {
+        height: 68px;
+        font-size: 14px;
+      }
+
+      .nav-right {
+        gap: 20px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 0 55px;
+        gap: 30px;
+      }
+
+      .hero h1 {
+        font-size: 25px;
+        margin-bottom: 22px;
+      }
+
+      .hero-description {
+        font-size: 21px;
+      }
+
+      .hero-art {
+        max-width: 300px;
+      }
+
+      .work {
+        padding-top: 25px;
+      }
+
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 38px 18px;
+      }
+
+      .project-title {
+        font-size: 15px;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .project-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+
+      .project-image {
+        aspect-ratio: 1.5 / 1;
+      }
+
+      .about-details {
+        gap: 18px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
     <!-- NAVIGATION -->
 
     <nav>
-        <a href="#" class="logo">
-            Lucía Vea-Murguía<span>.</span>
-        </a>
+      <a href="#">Home</a>
 
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#projects">Work</a>
-            <a href="#contact">Contact</a>
-        </div>
+      <div class="nav-right">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+      </div>
     </nav>
 
     <main>
 
-        <!-- HERO -->
+      <!-- HERO -->
 
-        <div class="hero">
+      <section class="hero">
 
-            <div>
-                <p class="eyebrow">
-                    CHEMICAL ENGINEERING · PERSONAL PORTFOLIO
-                </p>
+        <div class="hero-text">
+          <h1>Hi! I'm Lucía</h1>
 
-                <h1>
-                    Hi, I'm<br>
-                    Lucía<span>.</span>
-                </h1>
+          <p class="hero-description">
+            A Chemical Engineer exploring
+            <span>computational methods</span>,
+            scientific ideas and the little details
+            behind how things work.
+          </p>
 
-                <p class="hero-subtitle">
-                    Chemical Engineer with a curiosity
-                    for how things work.
-                </p>
-
-                <p class="intro">
-                    Exploring chemical processes, computational
-                    methods and the intersection between
-                    engineering and programming.
-                </p>
-
-                <a href="#projects" class="text-link">
-                    Explore my work ↗
-                </a>
-            </div>
-
-            <!-- ORIGINAL MOLECULAR-INSPIRED GRAPHIC -->
-
-            <div class="molecule">
-
-                <svg viewBox="0 0 220 220"
-                     fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-
-                    <g stroke="#315cff"
-                       stroke-width="1.5"
-                       opacity="0.7">
-
-                        <path d="M110 45 L160 75 L160 135 L110 165 L60 135 L60 75 Z"/>
-                        <path d="M110 45 L110 15"/>
-                        <path d="M160 75 L190 58"/>
-                        <path d="M160 135 L188 151"/>
-                        <path d="M60 135 L32 151"/>
-                        <path d="M60 75 L32 58"/>
-
-                    </g>
-
-                    <g fill="#ffffff" stroke="#315cff" stroke-width="2">
-
-                        <circle cx="110" cy="45" r="5"/>
-                        <circle cx="160" cy="75" r="5"/>
-                        <circle cx="160" cy="135" r="5"/>
-                        <circle cx="110" cy="165" r="5"/>
-                        <circle cx="60" cy="135" r="5"/>
-                        <circle cx="60" cy="75" r="5"/>
-                        <circle cx="110" cy="15" r="4"/>
-                        <circle cx="190" cy="58" r="4"/>
-                        <circle cx="188" cy="151" r="4"/>
-                        <circle cx="32" cy="151" r="4"/>
-                        <circle cx="32" cy="58" r="4"/>
-
-                    </g>
-
-                    <circle cx="110" cy="105" r="24"
-                            fill="#315cff"/>
-
-                    <text x="110" y="110"
-                          fill="white"
-                          font-size="11"
-                          font-family="Arial"
-                          text-anchor="middle">
-                        CH₃
-                    </text>
-
-                </svg>
-
-                <p class="molecule-note">
-                    FIG. 001 — JUST CURIOUS
-                </p>
-
-            </div>
-
+          <p class="hero-small">
+            Currently doing my Master's · Learning as I go
+          </p>
         </div>
 
+        <!-- ABSTRACT ORIGINAL DRAWING -->
 
-        <!-- ABOUT -->
+        <div class="hero-art">
+          <svg viewBox="0 0 440 350" xmlns="http://www.w3.org/2000/svg">
 
-        <section id="about">
+            <path class="drawing-light"
+              d="M218 39 C270 15 340 50 350 104
+              C365 153 330 180 347 220
+              C361 263 317 304 274 290
+              C233 280 212 321 172 294
+              C135 270 100 285 94 244
+              C84 204 48 190 70 150
+              C90 115 67 81 110 61
+              C145 43 177 57 218 39Z"/>
 
-            <div class="section-top">
-                <p class="section-label">A LITTLE ABOUT ME</p>
-                <span class="section-index">01 / 03</span>
+            <path class="drawing-light"
+              d="M213 47 C269 22 331 53 342 106
+              C355 151 324 180 340 218
+              C352 257 311 293 274 282
+              C232 270 210 311 174 286
+              C139 264 106 279 101 242
+              C92 205 59 187 78 151
+              C96 116 76 87 115 68
+              C148 49 179 61 213 47Z"/>
+
+            <path class="drawing-light"
+              d="M222 31 C278 9 349 45 358 101
+              C376 151 339 181 356 225
+              C370 270 319 315 270 299
+              C228 287 209 333 166 301
+              C127 272 88 294 86 244
+              C78 201 38 189 64 143
+              C86 103 57 72 109 54
+              C148 35 180 53 222 31Z"/>
+
+            <path class="drawing-line"
+              d="M217 41 C269 18 337 49 349 103
+              C362 150 329 178 345 219
+              C357 261 315 299 272 286
+              C230 273 211 315 171 290
+              C136 266 101 282 97 243
+              C88 204 52 188 73 148
+              C92 113 70 82 112 63
+              C148 45 181 57 217 41Z"/>
+
+            <circle cx="220" cy="172" r="4" fill="#4777ed"/>
+            <circle cx="349" cy="103" r="3" fill="#4777ed"/>
+            <circle cx="97" cy="243" r="3" fill="#4777ed"/>
+
+            <path d="M220 172 L270 172 L298 144"
+              fill="none" stroke="#4777ed" stroke-width="1"
+              stroke-dasharray="3 5"/>
+
+            <text x="305" y="141" font-size="10"
+              fill="#777" font-family="DM Sans">curiosity</text>
+
+          </svg>
+        </div>
+
+      </section>
+
+
+      <!-- WORK / PROJECT COLLECTIONS -->
+
+      <section class="work" id="work">
+
+        <h2 class="section-heading">A FEW THINGS I'VE BEEN WORKING ON</h2>
+
+        <p class="work-intro">
+          Projects, coursework, experiments and little discoveries.
+        </p>
+
+        <div class="project-grid">
+
+          <!-- 01 BACHELOR THESIS -->
+
+          <article class="project">
+            <div class="project-image thesis-art">
+              <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
+                <rect x="42" y="35" width="256" height="180"
+                  rx="3" fill="#ffffff" opacity=".8"/>
+                <path d="M72 175 L72 65 M72 175 L270 175"
+                  stroke="#999" stroke-width="1.2" fill="none"/>
+                <path d="M75 150 C110 142 120 78 155 105
+                  S210 166 265 75"
+                  stroke="#4777ed" stroke-width="3"
+                  fill="none" stroke-linecap="round"/>
+                <path d="M75 155 C120 140 150 130 190 115
+                  S235 90 265 100"
+                  stroke="#b3c6dc" stroke-width="2"
+                  fill="none" stroke-dasharray="5 5"/>
+                <circle cx="155" cy="105" r="5" fill="#4777ed"/>
+                <text x="82" y="55" fill="#777" font-size="9">FIG. 01</text>
+              </svg>
             </div>
-
-            <div class="about-grid">
-
-                <div>
-
-                    <h2>
-                        Between science<br>
-                        and curiosity.
-                    </h2>
-
-                    <p class="about-text">
-                        I'm Lucía, a Chemical Engineer currently
-                        exploring the world of computational
-                        engineering and scientific tools.
-
-                        <br><br>
-
-                        I enjoy understanding how things work,
-                        connecting ideas and using mathematics,
-                        programming and engineering to explore
-                        complex problems.
-
-                        <br><br>
-
-                        This is my little corner of the internet
-                        to document what I learn, build and discover
-                        along the way.
-                    </p>
-
-                    <div class="tools">
-                        <span class="tool">Python</span>
-                        <span class="tool">MATLAB</span>
-                        <span class="tool">Aspen Plus</span>
-                        <span class="tool">Excel</span>
-                        <span class="tool">AutoCAD</span>
-                    </div>
-
-                </div>
-
-                <div class="about-side">
-
-                    <p class="side-label">CURRENTLY</p>
-
-                    <p class="side-text">
-                        Exploring computational methods
-                        and engineering applications.
-                    </p>
-
-                    <p class="side-label">BACKGROUND</p>
-
-                    <p class="side-text">
-                        Chemical Engineering
-                    </p>
-
-                    <p class="side-label">INTERESTS</p>
-
-                    <p class="side-text">
-                        Process engineering · Scientific computing ·
-                        Data analysis · Modelling
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROJECTS -->
-
-        <section id="projects">
-
-            <div class="section-top">
-                <p class="section-label">SELECTED WORK</p>
-                <span class="section-index">02 / 03</span>
-            </div>
-
-            <h2>
-                Things I've worked on.
-            </h2>
-
-            <p class="projects-intro">
-                A growing collection of academic projects,
-                experiments and things worth exploring.
+            <h3 class="project-title">Bachelor's Thesis</h3>
+            <p class="project-description">
+              My undergraduate project and a little piece of engineering history.
             </p>
-
-            <a href="projects/bachelor-thesis/"
-               class="project">
-
-                <span class="project-number">01</span>
-
-                <div>
-                    <h3 class="project-title">
-                        Bachelor's Thesis
-                    </h3>
-
-                    <p class="project-description">
-                        An engineering project involving
-                        programming, computational methods
-                        and problem-solving.
-                    </p>
-                </div>
-
-                <span class="project-tag">
-                    ACADEMIC PROJECT ↗
-                </span>
-
-            </a>
-
-            <!-- ADD FUTURE PROJECTS ABOVE THIS LINE -->
-
-            <a href="https://github.com/lucia-vea-murguia"
-               target="_blank"
-               class="project">
-
-                <span class="project-number">02</span>
-
-                <div>
-                    <h3 class="project-title">
-                        More coming soon
-                    </h3>
-
-                    <p class="project-description">
-                        New experiments, ideas and projects
-                        currently in progress.
-                    </p>
-                </div>
-
-                <span class="project-tag">
-                    IN PROGRESS ↗
-                </span>
-
-            </a>
-
-        </section>
+            <p class="project-type">ACADEMIC PROJECT</p>
+          </article>
 
 
-        <!-- PERSONAL NOTE -->
+          <!-- 02 COMPUTATIONAL PRACTICUM -->
 
-        <section>
-
-            <div class="note">
-
-                <div>
-                    <h3>
-                        A little science, a lot of curiosity.
-                    </h3>
-
-                    <p>
-                        Always learning, always experimenting.
-                        This portfolio will grow as I do.
-                    </p>
-                </div>
-
-                <div class="note-symbol">
-                    ∫
-                </div>
-
+          <article class="project">
+            <div class="project-image computational-art">
+              <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
+                <rect x="48" y="38" width="244" height="174"
+                  rx="5" fill="#fff"/>
+                <rect x="48" y="38" width="244" height="23"
+                  fill="#dce3e9"/>
+                <circle cx="63" cy="49" r="3" fill="#aab5c0"/>
+                <circle cx="75" cy="49" r="3" fill="#aab5c0"/>
+                <circle cx="87" cy="49" r="3" fill="#aab5c0"/>
+                <path d="M75 91 L110 91 M75 108 L150 108
+                  M75 125 L130 125 M75 142 L180 142"
+                  stroke="#b5c3d0" stroke-width="3"
+                  stroke-linecap="round"/>
+                <path d="M75 170 C110 160 115 110 150 132
+                  S205 175 262 91"
+                  stroke="#4777ed" stroke-width="3"
+                  fill="none"/>
+                <circle cx="150" cy="132" r="5" fill="#4777ed"/>
+              </svg>
             </div>
-
-        </section>
-
-
-        <!-- CONTACT -->
-
-        <section id="contact" class="contact">
-
-            <div class="section-top">
-                <p class="section-label">SAY HELLO</p>
-                <span class="section-index">03 / 03</span>
-            </div>
-
-            <h2>
-                Let's connect<span style="color:#315cff">.</span>
-            </h2>
-
-            <p class="contact-text">
-                Have an interesting project, idea or just
-                want to say hello? Feel free to reach out.
+            <h3 class="project-title">Computational Practicum</h3>
+            <p class="project-description">
+              Python, calculations, code and small computational experiments.
             </p>
+            <p class="project-type">MASTER'S · COMPUTING</p>
+          </article>
 
-            <div class="contact-links">
 
-                <a href="https://github.com/lucia-vea-murguia"
-                   target="_blank">
-                    GitHub ↗
-                </a>
+          <!-- 03 REACTORS AND KINETICS -->
 
-                <a href="mailto:YOUR_EMAIL_HERE">
-                    Email ↗
-                </a>
+          <article class="project">
+            <div class="project-image reactor-art">
+              <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
+                <rect x="112" y="39" width="116" height="169"
+                  rx="48" fill="#fff" stroke="#c8b9a8" stroke-width="2"/>
+                <path d="M112 95 Q170 116 228 95"
+                  stroke="#c8b9a8" stroke-width="1.5" fill="none"/>
+                <path d="M170 40 L170 208"
+                  stroke="#d5c9bd" stroke-width="1" stroke-dasharray="4 5"/>
+                <path d="M145 80 L195 80 M145 80 L170 100 L195 80"
+                  stroke="#4777ed" stroke-width="2" fill="none"
+                  stroke-linecap="round"/>
+                <path d="M145 151 Q170 132 195 151"
+                  stroke="#d7a879" stroke-width="3" fill="none"/>
+                <path d="M170 151 L170 180"
+                  stroke="#d7a879" stroke-width="2"/>
+                <path d="M100 75 L112 75 M228 75 L240 75"
+                  stroke="#a99a89" stroke-width="2"/>
+                <circle cx="170" cy="151" r="4" fill="#d7a879"/>
+                <text x="170" y="229" font-size="9"
+                  text-anchor="middle" fill="#8c7c6c">REACTION SYSTEM</text>
+              </svg>
+            </div>
+            <h3 class="project-title">Reactors & Kinetics</h3>
+            <p class="project-description">
+              Reaction engineering, kinetic models and reactor design.
+            </p>
+            <p class="project-type">MASTER'S · ENGINEERING</p>
+          </article>
 
-                <!-- ADD YOUR LINKEDIN URL HERE -->
 
+          <!-- 04 MASTER COURSEWORK -->
+
+          <article class="project">
+            <div class="project-image master-art">
+              <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
+                <rect x="62" y="32" width="216" height="185"
+                  rx="4" fill="#fff"/>
+                <path d="M88 65 L245 65 M88 82 L220 82"
+                  stroke="#d5d0df" stroke-width="2"/>
+                <path d="M88 112 L135 112 M88 126 L135 126
+                  M88 140 L135 140"
+                  stroke="#c4bfd0" stroke-width="2"/>
+                <circle cx="205" cy="137" r="43"
+                  fill="none" stroke="#c4b5df" stroke-width="2"/>
+                <path d="M205 94 A43 43 0 0 1 242 158
+                  L205 137Z" fill="#b5a3d8"/>
+                <path d="M205 137 L205 94"
+                  stroke="#fff" stroke-width="1.5"/>
+                <path d="M88 175 L245 175"
+                  stroke="#d5d0df" stroke-width="2"/>
+                <text x="88" y="52" font-size="9" fill="#887d9b">NOTES / 04</text>
+              </svg>
+            </div>
+            <h3 class="project-title">Master's Coursework</h3>
+            <p class="project-description">
+              Interesting assignments, concepts and things I'm learning along the way.
+            </p>
+            <p class="project-type">ACADEMIC NOTES</p>
+          </article>
+
+
+          <!-- 05 PERSONAL PROJECTS -->
+
+          <article class="project">
+            <div class="project-image personal-art">
+              <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
+                <path d="M170 42 C210 42 247 73 247 115
+                  C247 157 212 190 170 190
+                  C128 190 93 157 93 115
+                  C93 73 130 42 170 42Z"
+                  fill="none" stroke="#94ae95" stroke-width="2"/>
+                <path d="M170 60 C201 60 225 85 225 115
+                  C225 145 200 170 170 170
+                  C140 170 115 145 115 115
+                  C115 85 140 60 170 60Z"
+                  fill="none" stroke="#94ae95" stroke-width="1.5"/>
+                <path d="M170 60 L170 170 M115 115 L225 115"
+                  stroke="#94ae95" stroke-width="1"
+                  stroke-dasharray="4 5"/>
+                <circle cx="170" cy="115" r="7" fill="#4777ed"/>
+                <path d="M170 108 L198 83"
+                  stroke="#4777ed" stroke-width="1.5"/>
+                <text x="204" y="81" font-size="9" fill="#718d73">idea!</text>
+              </svg>
+            </div>
+            <h3 class="project-title">Personal Projects</h3>
+            <p class="project-description">
+              Side projects, random ideas and things I make out of curiosity.
+            </p>
+            <p class="project-type">JUST FOR FUN</p>
+          </article>
+
+        </div>
+      </section>
+
+
+      <!-- ABOUT -->
+
+      <section class="about" id="about">
+
+        <h2 class="section-heading">A LITTLE ABOUT ME</h2>
+
+        <div class="about-content">
+
+          <div>
+            <h2>Science, engineering & curiosity.</h2>
+            <p>
+              I'm Lucía, a Chemical Engineer currently pursuing my
+              Master's degree. I enjoy exploring how engineering,
+              mathematics and programming come together to solve
+              interesting problems.
+              <br><br>
+              This website is a small collection of things I work on,
+              learn and discover along the way. Nothing too serious —
+              just a place to keep track of it all.
+            </p>
+          </div>
+
+          <div class="about-details">
+
+            <div>
+              <p class="detail-label">CURRENTLY</p>
+              <p class="detail-text">Master's student</p>
             </div>
 
-        </section>
+            <div>
+              <p class="detail-label">FIELD</p>
+              <p class="detail-text">Chemical Engineering</p>
+            </div>
+
+            <div>
+              <p class="detail-label">TOOLS</p>
+              <p class="detail-text">
+                Python · MATLAB · Aspen Plus · Excel · AutoCAD
+              </p>
+            </div>
+
+            <div>
+              <p class="detail-label">EXPLORING</p>
+              <p class="detail-text">
+                Modelling · Simulation · Scientific computing
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
 
     </main>
 
@@ -771,22 +718,17 @@
     <!-- FOOTER -->
 
     <footer>
-
-        <div class="container">
-
-            <span>
-                © 2026 Lucía Vea-Murguía
-            </span>
-
-            <span>
-                Made with curiosity.
-            </span>
-
-        </div>
-
+      <div class="footer-content">
+        <span>© 2026 Lucía Vea-Murguía</span>
+        <span>
+          <a href="https://github.com/lucia-vea-murguia" target="_blank">
+            GitHub ↗
+          </a>
+        </span>
+      </div>
     </footer>
 
-</div>
+  </div>
 
 </body>
 </html>
