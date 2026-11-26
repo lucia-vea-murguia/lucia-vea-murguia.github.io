@@ -53,7 +53,7 @@
     .hero-wrapper {
       position: relative;
       width: 100%;
-      min-height: 85vh; /* Ocupa casi toda la pantalla; usa 100vh si quieres pantalla completa exacta */
+      min-height: 85vh;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -73,7 +73,6 @@
       height: 100%;
       object-fit: cover;
       object-position: right center;
-      /* Difumina la imagen hacia la izquierda para dejar libre la zona del texto */
       -webkit-mask-image: linear-gradient(
         to right,
         transparent 0%,
@@ -90,7 +89,6 @@
       );
     }
 
-    /* Degradado extra en el borde inferior para suavizar la transición hacia "Work" */
     .hero-bg::after {
       content: "";
       position: absolute;
@@ -249,8 +247,6 @@
     /* THUMBNAILS */
 
     .thesis-art { background: #e8f0f8; }
-    .computational-art { background: #e8edf1; }
-    .reactor-art { background: #f3eee8; }
     .master-art { background: #f1eef7; }
     .personal-art { background: #edf2ec; }
 
@@ -329,7 +325,6 @@
         min-height: 75vh;
       }
 
-      /* En móvil suavizamos más la imagen para mantener el contraste del texto */
       .hero-bg img {
         opacity: 0.35;
         -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
@@ -423,17 +418,17 @@
       <!-- HERO -->
       <section class="hero">
         <div class="hero-text">
-          <h1>hi:) I'm Lu</h1>
+          <h1>hi! i'm lu:)</h1>
 
           <p class="hero-description">
-            A Chemical Engineer exploring
+            a chemical engineer exploring
             <span>computational methods</span>,
             scientific ideas and the little details
             behind how things work.
           </p>
 
           <p class="hero-small">
-            Currently doing my Master's · Learning as I go
+            currently doing my master's · learning as I go ·
           </p>
         </div>
       </section>
@@ -485,71 +480,7 @@
           </article>
 
 
-          <!-- 02 COMPUTATIONAL PRACTICUM -->
-
-          <article class="project">
-            <div class="project-image computational-art">
-              <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
-                <rect x="48" y="38" width="244" height="174"
-                  rx="5" fill="#fff"/>
-                <rect x="48" y="38" width="244" height="23"
-                  fill="#dce3e9"/>
-                <circle cx="63" cy="49" r="3" fill="#aab5c0"/>
-                <circle cx="75" cy="49" r="3" fill="#aab5c0"/>
-                <circle cx="87" cy="49" r="3" fill="#aab5c0"/>
-                <path d="M75 91 L110 91 M75 108 L150 108
-                  M75 125 L130 125 M75 142 L180 142"
-                  stroke="#b5c3d0" stroke-width="3"
-                  stroke-linecap="round"/>
-                <path d="M75 170 C110 160 115 110 150 132
-                  S205 175 262 91"
-                  stroke="#4777ed" stroke-width="3"
-                  fill="none"/>
-                <circle cx="150" cy="132" r="5" fill="#4777ed"/>
-              </svg>
-            </div>
-            <h3 class="project-title">Computational Practicum</h3>
-            <p class="project-description">
-              Python, calculations, code and small computational experiments.
-            </p>
-            <p class="project-type">MASTER'S · COMPUTING</p>
-          </article>
-
-
-          <!-- 03 REACTORS AND KINETICS -->
-
-          <article class="project">
-            <div class="project-image reactor-art">
-              <svg viewBox="0 0 340 250" xmlns="http://www.w3.org/2000/svg">
-                <rect x="112" y="39" width="116" height="169"
-                  rx="48" fill="#fff" stroke="#c8b9a8" stroke-width="2"/>
-                <path d="M112 95 Q170 116 228 95"
-                  stroke="#c8b9a8" stroke-width="1.5" fill="none"/>
-                <path d="M170 40 L170 208"
-                  stroke="#d5c9bd" stroke-width="1" stroke-dasharray="4 5"/>
-                <path d="M145 80 L195 80 M145 80 L170 100 L195 80"
-                  stroke="#4777ed" stroke-width="2" fill="none"
-                  stroke-linecap="round"/>
-                <path d="M145 151 Q170 132 195 151"
-                  stroke="#d7a879" stroke-width="3" fill="none"/>
-                <path d="M170 151 L170 180"
-                  stroke="#d7a879" stroke-width="2"/>
-                <path d="M100 75 L112 75 M228 75 L240 75"
-                  stroke="#a99a89" stroke-width="2"/>
-                <circle cx="170" cy="151" r="4" fill="#d7a879"/>
-                <text x="170" y="229" font-size="9"
-                  text-anchor="middle" fill="#8c7c6c">REACTION SYSTEM</text>
-              </svg>
-            </div>
-            <h3 class="project-title">Reactors & Kinetics</h3>
-            <p class="project-description">
-              Reaction engineering, kinetic models and reactor design.
-            </p>
-            <p class="project-type">MASTER'S · ENGINEERING</p>
-          </article>
-
-
-          <!-- 04 MASTER COURSEWORK -->
+          <!-- 02 MASTER COURSEWORK -->
 
           <article class="project">
             <div class="project-image master-art">
@@ -569,7 +500,7 @@
                   stroke="#fff" stroke-width="1.5"/>
                 <path d="M88 175 L245 175"
                   stroke="#d5d0df" stroke-width="2"/>
-                <text x="88" y="52" font-size="9" fill="#887d9b">NOTES / 04</text>
+                <text x="88" y="52" font-size="9" fill="#887d9b">NOTES / 02</text>
               </svg>
             </div>
             <h3 class="project-title">Master's Coursework</h3>
@@ -580,7 +511,7 @@
           </article>
 
 
-          <!-- 05 PERSONAL PROJECTS -->
+          <!-- 03 PERSONAL PROJECTS -->
 
           <article class="project">
             <div class="project-image personal-art">
@@ -626,12 +557,17 @@
           <div>
             <h2>Science, engineering & curiosity.</h2>
             <p>
-              I'm Lucía, a TU Delft Mcs Chemical Engineer student. I enjoy exploring how engineering,
-              mathematics and programming come together to solve
-              interesting problems.
+              I'm Lucía, a Chemical Engineer from Spain currently pursuing
+              my MSc in Chemical Engineering at TU Delft, focusing on
+              process modelling and simulation. I enjoy exploring how
+              transport phenomena, thermodynamics and scientific computing
+              come together to explain how real systems behave.
               <br><br>
-              This website is a small collection of things I work on,
-              learn and discover along the way. Nothing too serious.
+              Before moving to the Netherlands, I worked on reduced-order
+              multiphysics modelling of catalytic reactors for my Bachelor's
+              thesis and gained hands-on process engineering experience in
+              industry. This website is a small space to document projects,
+              simulations and ideas I explore along the way.
             </p>
           </div>
 
@@ -639,25 +575,31 @@
 
             <div>
               <p class="detail-label">CURRENTLY</p>
-              <p class="detail-text">Master's student</p>
-            </div>
-
-            <div>
-              <p class="detail-label">FIELD</p>
-              <p class="detail-text">Chemical Engineering</p>
-            </div>
-
-            <div>
-              <p class="detail-label">TOOLS</p>
               <p class="detail-text">
-                Python · MATLAB · Aspen Plus · Excel · AutoCAD
+                MSc Chemical Engineering<br>
+                TU Delft · Modelling track
               </p>
             </div>
 
             <div>
-              <p class="detail-label">EXPLORING</p>
+              <p class="detail-label">BACKGROUND</p>
               <p class="detail-text">
-                Modelling · Simulation · Scientific computing
+                BSc Chemical Engineering<br>
+                University of Zaragoza
+              </p>
+            </div>
+
+            <div>
+              <p class="detail-label">TOOLS & CODE</p>
+              <p class="detail-text">
+                Python · MATLAB / Simulink · Aspen · DWSIM · LaTeX
+              </p>
+            </div>
+
+            <div>
+              <p class="detail-label">INTERESTS</p>
+              <p class="detail-text">
+                Process simulation · Reactor modelling · Numerical methods
               </p>
             </div>
 
