@@ -48,6 +48,65 @@
       padding: 0 42px;
     }
 
+    /* FULL-BLEED HERO WRAPPER */
+
+    .hero-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 85vh; /* Ocupa casi toda la pantalla; usa 100vh si quieres pantalla completa exacta */
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* IMAGEN DE FONDO DIFUMINADA A LA IZQUIERDA */
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right center;
+      /* Difumina la imagen hacia la izquierda para dejar libre la zona del texto */
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 32%,
+        rgba(0, 0, 0, 0.65) 58%,
+        black 85%
+      );
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.08) 32%,
+        rgba(0, 0, 0, 0.65) 58%,
+        black 85%
+      );
+    }
+
+    /* Degradado extra en el borde inferior para suavizar la transición hacia "Work" */
+    .hero-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 78%, var(--white) 100%);
+    }
+
+    .hero-wrapper > .container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
     /* NAVIGATION */
 
     nav {
@@ -75,12 +134,10 @@
     /* HERO */
 
     .hero {
-      min-height: 465px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      flex: 1;
+      display: flex;
       align-items: center;
-      gap: 40px;
-      padding: 50px 0 75px;
+      padding: 60px 0 90px;
     }
 
     .hero-text {
@@ -111,21 +168,6 @@
       margin-top: 22px;
       color: var(--grey);
       font-size: 13px;
-    }
-
-    /* HERO IMAGE */
-
-    .hero-art {
-      width: 100%;
-      max-width: 520px;
-      justify-self: center;
-    }
-
-    .hero-image {
-      display: block;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
     }
 
     /* WORK */
@@ -204,35 +246,13 @@
       font-weight: 600;
     }
 
-    /* THUMBNAIL 1 - THESIS */
+    /* THUMBNAILS */
 
-    .thesis-art {
-      background: #e8f0f8;
-    }
-
-    /* THUMBNAIL 2 - COMPUTATIONAL */
-
-    .computational-art {
-      background: #e8edf1;
-    }
-
-    /* THUMBNAIL 3 - REACTORS */
-
-    .reactor-art {
-      background: #f3eee8;
-    }
-
-    /* THUMBNAIL 4 - MASTER */
-
-    .master-art {
-      background: #f1eef7;
-    }
-
-    /* THUMBNAIL 5 - PERSONAL */
-
-    .personal-art {
-      background: #edf2ec;
-    }
+    .thesis-art { background: #e8f0f8; }
+    .computational-art { background: #e8edf1; }
+    .reactor-art { background: #f3eee8; }
+    .master-art { background: #f1eef7; }
+    .personal-art { background: #edf2ec; }
 
     /* ABOUT */
 
@@ -305,6 +325,17 @@
         padding: 0 23px;
       }
 
+      .hero-wrapper {
+        min-height: 75vh;
+      }
+
+      /* En móvil suavizamos más la imagen para mantener el contraste del texto */
+      .hero-bg img {
+        opacity: 0.35;
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+      }
+
       nav {
         height: 68px;
         font-size: 14px;
@@ -315,9 +346,7 @@
       }
 
       .hero {
-        grid-template-columns: 1fr;
-        padding: 65px 0 55px;
-        gap: 30px;
+        padding: 45px 0 55px;
       }
 
       .hero h1 {
@@ -327,10 +356,6 @@
 
       .hero-description {
         font-size: 21px;
-      }
-
-      .hero-art {
-        max-width: 360px;
       }
 
       .work {
@@ -375,25 +400,28 @@
 
 <body>
 
-  <div class="container">
+  <!-- FULLSCREEN HERO SECTION -->
+  <header class="hero-wrapper">
+    <div class="hero-bg">
+      <img
+        src="images/flow-field.png"
+        alt="CFD-inspired flow field visualization"
+      />
+    </div>
 
-    <!-- NAVIGATION -->
+    <div class="container">
+      <!-- NAVIGATION -->
+      <nav>
+        <a href="#">Home</a>
 
-    <nav>
-      <a href="#">Home</a>
-
-      <div class="nav-right">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-      </div>
-    </nav>
-
-    <main>
+        <div class="nav-right">
+          <a href="#work">Work</a>
+          <a href="#about">About</a>
+        </div>
+      </nav>
 
       <!-- HERO -->
-
       <section class="hero">
-
         <div class="hero-text">
           <h1>Hi! I'm Lucía</h1>
 
@@ -408,19 +436,13 @@
             Currently doing my Master's · Learning as I go
           </p>
         </div>
-
-        <!-- HERO IMAGE -->
-
-        <div class="hero-art">
-          <img
-            src="images/flow-field.png"
-            alt="CFD-inspired flow field visualization"
-            class="hero-image"
-          />
-        </div>
-
       </section>
+    </div>
+  </header>
 
+
+  <div class="container">
+    <main>
 
       <!-- WORK / PROJECT COLLECTIONS -->
 
